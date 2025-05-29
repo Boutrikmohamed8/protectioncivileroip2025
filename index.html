@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROIP Chat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom scrollbar for webkit browsers */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #2d3748; /* neutral-800 */
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #4a5568; /* neutral-600 */
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #718096; /* neutral-500 */
+    }
+    body {
+      font-family: 'Inter', sans-serif; /* A common sans-serif font, Tailwind uses system fonts by default */
+      overscroll-behavior: none; /* Prevent pull-to-refresh or overscroll effects */
+    }
+    /* Define custom colors used in the app to be available for Tailwind utilities if needed */
+    /* These are already applied via direct class names, but good for reference */
+    /* You might need to extend Tailwind config in a real project for this */
+    /* For now, direct class usage is fine */
+    /* Example: bg-primary, text-primary-light */
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              light: '#60a5fa', // blue-400
+              DEFAULT: '#3b82f6', // blue-500
+              dark: '#2563eb',  // blue-600
+            },
+            secondary: {
+              light: '#4ade80', // green-400
+              DEFAULT: '#22c55e', // green-500
+              dark: '#16a34a',  // green-600
+            },
+            accent: {
+              light: '#f87171', // red-400
+              DEFAULT: '#ef4444', // red-500
+              dark: '#dc2626',  // red-600
+            },
+            neutral: {
+              lightest: '#f3f4f6', // gray-100
+              light: '#d1d5db',   // gray-300
+              DEFAULT: '#6b7280', // gray-500
+              dark: '#374151',    // gray-700
+              darker: '#1f2937',  // gray-800
+              darkest: '#111827', // gray-900
+            }
+          },
+          keyframes: {
+            modalShow: {
+              '0%': { opacity: '0', transform: 'scale(0.95)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            }
+          },
+          animation: {
+            modalShow: 'modalShow 0.3s forwards ease-in-out',
+          }
+        }
+      }
+    }
+  </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.1.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.1"
+  }
+}
+</script>
+</head>
+<body class="bg-neutral-darkest">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html><link rel="stylesheet" href="index.css">
+<script src="index.tsx" type="module"></script>

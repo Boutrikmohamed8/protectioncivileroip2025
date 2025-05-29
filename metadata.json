@@ -1,0 +1,8 @@
+{
+  "name": "ROIP Chat - Civil Protection",
+  "description": "A real-time communication application for Civil Protection teams, featuring chat, group messaging, location sharing, and simulated voice/video calls with AI assistance.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
